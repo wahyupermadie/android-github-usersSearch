@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="items"
+                type="com.example.githubsearch.model.Items"/>
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                                                  android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_github"
+                        android:layout_margin="5dp"
+                        android:src="@{items.avatarUrl}"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_name_github"
+                        android:textSize="20sp"
+                        android:text="@{items.login}"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
